@@ -18,7 +18,7 @@ body.menu-open #MENU_AS_CONTAINER_TOGGLE{z-index:100000!important}body.menu-open
    older imported page styles from adding an extra 24px above their content. */
 #comp-m4r9bjmu4{margin-bottom:20px!important}
 #comp-m4sgx9rv .pro-gallery{height:auto!important}
-#comp-m4sgx9rv .pro-gallery-margin-container{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;width:100%!important;height:auto!important}
+#comp-m4sgx9rv .pro-gallery-margin-container{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;width:100%!important;height:auto!important}
 #comp-m4sgx9rv .item-link-wrapper{position:relative;aspect-ratio:16/9}
 #comp-m4sgx9rv .gallery-item-container{position:relative!important;inset:auto!important;width:100%!important;height:100%!important;display:block!important;opacity:1!important;visibility:visible!important}
 /* The captured gallery has an unstyled wrapper between the card and its image.
@@ -26,3 +26,6 @@ body.menu-open #MENU_AS_CONTAINER_TOGGLE{z-index:100000!important}body.menu-open
 #comp-m4sgx9rv .gallery-item-container>div:not(.item-action){position:relative;width:100%;height:100%}
 #comp-m4sgx9rv .gallery-item-wrapper,#comp-m4sgx9rv .gallery-item-content,#comp-m4sgx9rv .gallery-item-visible,#comp-m4sgx9rv .item-hover-flex-container,#comp-m4sgx9rv .gallery-item-hover{width:100%!important;height:100%!important;margin:0!important}
 }
+/* Wix changes the homepage gallery's column count as its available width grows. */
+@media(min-width:1034px){#comp-m4sgx9rv .pro-gallery-margin-container{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1713px){#comp-m4sgx9rv .pro-gallery-margin-container{grid-template-columns:repeat(3,minmax(0,1fr))}}
