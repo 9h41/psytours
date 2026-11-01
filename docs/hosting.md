@@ -2,9 +2,9 @@
 
 Le dépôt source est https://github.com/9h41/psytours. Le propriétaire a autorisé sa visibilité **publique temporaire** pour tester GitHub Pages ; ne pas le rendre privé avant d'avoir décidé du prochain hébergement, car cela interromprait Pages sur le forfait Free.
 
-- `main` : version stable, destinée plus tard au site de production `psy-tours.fr`.
+- `main` : coquille vide avec un README uniquement, sans site, workflow ni historique de migration. Elle est réservée à la future version stable, destinée plus tard à `psy-tours.fr`.
 - `preview` : travail en cours, destiné à `preview.psy-tours.fr`.
-- Les modifications de `preview` seront promues vers `main` après validation.
+- Tout le travail du site reste sur `preview`. Ne pas le reporter sur `main` sans nouvelle instruction explicite. Les deux branches ont actuellement des historiques indépendants ; la future promotion devra être choisie à ce moment-là.
 - Le workflow `check.yml` contrôle les deux branches et leurs pull requests. Il ne déploie rien.
 - Le workflow `preview.yml` déploie uniquement `preview` vers https://9h41.github.io/psytours/ ; l'environnement `github-pages` accepte cette branche. `main` ne déploie pas en production.
 
