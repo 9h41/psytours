@@ -1,8 +1,9 @@
 [
   {
     "url": "https://www.psy-tours.fr",
-    "file": "home.html",
-    "bytes": 89050
+    "file": "home-current-rendered.html",
+    "bytes": 114929,
+    "previousFile": "home.html"
   },
   {
     "url": "https://www.psy-tours.fr/blog",
@@ -156,7 +157,8 @@
   },
   {
     "url": "https://www.psy-tours.fr/voyage-interieur",
-    "file": "voyage-interieur.html",
-    "bytes": 22581
+    "file": "voyage-current-rendered.html",
+    "bytes": 32314,
+    "previousFile": "voyage-interieur.html"
   }
 ]

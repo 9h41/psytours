@@ -36,7 +36,7 @@ def local_asset(url):
     # Keep the exact crop/quality selected by the original layout, without blur placeholders.
     url = re.sub(r',?blur_\d+', '', url)
     ext = Path(unquote(parsed.path)).suffix.lower()
-    if ext not in {'.woff','.woff2','.ttf','.png','.jpg','.jpeg','.webp','.avif','.svg','.gif','.pdf','.html'}:
+    if ext not in {'.woff','.woff2','.ttf','.png','.jpg','.jpeg','.webp','.avif','.svg','.gif','.pdf','.html','.mp4','.webm','.mp3','.ogg','.ico'}:
         ext = '.asset'
     if 'enc_avif' in url: ext = '.avif'
     name = hashlib.sha256(url.encode()).hexdigest()[:20] + ext
@@ -78,10 +78,27 @@ def serialize(node, shared=False):
     for key in list(attrs):
         if key.startswith('on') or key.startswith('data-'):
             # CSS uses these presentation hooks. Runtime models and event metadata are discarded.
-            if key not in {'data-hook','data-testid','data-mesh-id','data-motion-part','data-angle','data-state','data-align','data-direction','data-preview','data-undisplayed','data-index','data-stretch','data-margin','data-menuposition'}:
+            if key not in {'data-hook','data-testid','data-mesh-id','data-motion-part','data-angle','data-state','data-align','data-direction','data-preview','data-undisplayed','data-index','data-stretch','data-margin','data-menuposition','data-gap-spacer-top-margin','data-breakout','data-ricos-font','data-ricos-responsive','data-font-size','data-list-style','data-list-style-position','data-heading-level','data-type','data-indent','data-color'}:
                 del attrs[key]
     if tag == 'img':
         src = attrs.get('src','')
+        ancestor = node.parent
+        responsive = attrs.get('srcset','')
+        while ancestor:
+            try:
+                info=json.loads(ancestor.attrs.get('data-image-info','{}'))
+                image=info.get('imageData',{})
+                if info.get('isLQIP') and info.get('alignType')=='center' and info.get('displayMode')=='fill' and image.get('uri'):
+                    width,height=info.get('targetWidth',0),info.get('targetHeight',0)
+                    if width>0 and height>0:
+                        base='https://static.wixstatic.com/media/'+image['uri']
+                        variants=[(base+f'/v1/fill/w_{width*density},h_{height*density},al_c,q_85,enc_avif,quality_auto/'+image['uri'],density) for density in [1,2,3] if width*density<=image.get('width',width) and height*density<=image.get('height',height)]
+                        if variants:
+                            src=variants[0][0]
+                            responsive=', '.join(url+f' {density}x' for url,density in variants)
+                    break
+            except (ValueError,TypeError): pass
+            ancestor=ancestor.parent
         if not src:
             ancestor = node.parent
             while ancestor:
@@ -95,6 +112,9 @@ def serialize(node, shared=False):
                 ancestor=ancestor.parent
         if src: attrs['src']=local_asset(src)
         attrs.pop('srcset',None)
+        if responsive:
+            candidates=re.findall(r'(\S+)\s+(\d+(?:\.\d+)?[wx])(?:,\s*|$)',responsive)
+            if candidates:attrs['srcset']=', '.join(local_asset(url)+' '+density for url,density in candidates)
         attrs.pop('sizes',None)
         attrs.setdefault('alt','')
         attrs['decoding']='async'

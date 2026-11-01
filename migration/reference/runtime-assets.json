@@ -1,0 +1,44 @@
+[
+  {
+    "route": "/",
+    "count": 67,
+    "hosts": [
+      "localhost:8080"
+    ]
+  },
+  {
+    "route": "/blog/",
+    "count": 55,
+    "hosts": [
+      "localhost:8080"
+    ]
+  },
+  {
+    "route": "/post/blog-l-importance-du-cadre/",
+    "count": 51,
+    "hosts": [
+      "localhost:8080"
+    ]
+  },
+  {
+    "route": "/prendre-rendez-vous/",
+    "count": 45,
+    "hosts": [
+      "localhost:8080"
+    ]
+  },
+  {
+    "route": "/qui-suis-je/",
+    "count": 53,
+    "hosts": [
+      "localhost:8080"
+    ]
+  },
+  {
+    "route": "/etique-et-déonthologie/",
+    "count": 57,
+    "hosts": [
+      "localhost:8080"
+    ]
+  }
+]

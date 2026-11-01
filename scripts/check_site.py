@@ -7,6 +7,7 @@ from collections import Counter
 import sys
 import xml.etree.ElementTree as ET
 from html_tree import Tree, Node
+from check_assets import audit_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / 'dist'
@@ -99,15 +100,25 @@ for entry in captures:
     missing = dict(words(source) - words(target))
     text_report.append({'url': entry['url'], 'missing': missing})
     require(not missing, f"Lost captured text on {entry['url']}: {missing}")
+    if '/post/' in urlsplit(entry['url']).path:
+        # These passive attributes are CSS inputs, not removable Wix runtime
+        # metadata. Losing data-breakout previously widened article text by 198px.
+        presentation = {'data-breakout', 'data-ricos-font', 'data-ricos-responsive', 'data-font-size', 'data-list-style', 'data-list-style-position'}
+        style_attributes = lambda tree: Counter((key,value) for node in tree.walk() for key,value in node.attrs.items() if key in presentation)
+        lost_attributes = style_attributes(source) - style_attributes(target)
+        require(not lost_attributes, f"Lost rich-text formatting on {entry['url']}: {dict(lost_attributes)}")
 (reference/'text-check.json').write_text(json.dumps(text_report, ensure_ascii=False, indent=2))
 require(len(sitemap_routes)==len(sitemap.findall('.//{*}loc')), 'Duplicate sitemap URLs')
 ET.parse(DIST/'feed.xml')
 require(not (DIST/'migration').exists(), 'Source archive leaked into deployment')
 require(not (DIST/'node_modules').exists(), 'Build dependencies leaked into deployment')
+asset_errors, audited_files = audit_assets(DIST)
+errors.extend(asset_errors)
 if errors:
     print('\n'.join(errors))
     sys.exit(1)
 total = sum(p.stat().st_size for p in DIST.rglob('*') if p.is_file())
 print(f'PASS: {len(pages)} HTML pages; all {len(original_routes)} original routes and sitemap entries; local links/assets; metadata; XML; no Wix runtime.')
 print(f'Captured main-page words preserved on {len(text_report)} routes; responsive images and CSS assets verified.')
+print(f'Asset audit: {audited_files} deployable text files; no Wix URLs or hotlinked assets. Direct Google Maps is the approved exception.')
 print(f'Deployment size: {total / 1024 / 1024:.2f} MiB. Home HTML: {(DIST/"index.html").stat().st_size / 1024:.1f} KiB.')

@@ -47,6 +47,6 @@ Les nouveaux fichiers sont des brouillons Markdown. Les pages migrées utilisent
 
 Les nouveaux articles apparaissent sur le blog, dans les catégories correspondantes, le sitemap et le flux. Une nouvelle page doit recevoir un lien dans le contenu ou un menu.
 
-Le formulaire de newsletter et les compteurs gardent leur présentation originale ; leur service en ligne n’est pas simulé. Les cartes utilisent Google Maps et le moteur cartographique public isolé de Wix pour conserver leur apparence. Consulter `docs/fidelity.md` pour les limites de services et la préparation de production.
+Les images, vidéos, polices, fichiers et aperçus de partage sont hébergés localement avec le site. Les cartes interactives chargent directement Google Maps, seule exception externe approuvée ; elles utilisent son interface standard. Le formulaire de newsletter et les compteurs gardent leur présentation originale ; leur service en ligne n’est pas simulé. Consulter `docs/fidelity.md` pour les limites de services et la préparation de production.
 
 Le site Wix et le DNS de production n’ont pas été modifiés.

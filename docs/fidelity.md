@@ -10,7 +10,7 @@ Les 32 routes des sitemaps et 37 archives de tags découvertes dans les articles
 
 ## Modification autorisée
 
-Seul le bord supérieur de l’image principale est arrondi. Les animations sont désactivées. Le visuel complet de Wix est utilisé avec son cadrage original ; le portrait recadré du premier essai n’est plus utilisé.
+Seul le bord supérieur de l’image principale peut différer du cadrage Wix. Les animations sont désactivées. Le site public a changé pendant la migration : le montage initial de l’accueil a été remplacé sur Wix par un portrait séparé du texte. La version locale reprend maintenant ce nouveau visuel et son cadrage actuel, avec l’arrondi conservé.
 
 ## Conversion statique
 
@@ -25,13 +25,31 @@ Seul le bord supérieur de l’image principale est arrondi. Les animations sont
 
 ## Services et limites
 
+La photo du cabinet sur l’accueil mobile utilisait initialement la miniature de chargement Wix (80×77 px). Elle est remplacée par trois variantes locales issues de la même image et du même cadrage : 320×306, 640×612 et 960×918 px. Le navigateur sélectionne la densité adaptée, sans modifier la taille de la section. Le sérialiseur reconnaît désormais les métadonnées `isLQIP` et conserve les sources responsives.
+
 La copie statique ne peut pas recréer à elle seule les services Wix CRM et les données privées. Le formulaire de newsletter conserve son apparence, mais une soumission locale affiche un message d’indisponibilité au lieu d’une fausse confirmation. Les vues, commentaires et likes sont des valeurs de la capture ; aucune persistance n’est inventée.
 
 Les réservations externes conservent leurs destinations. Le bouton Liberlo est localisé ; son logo est déjà manquant sur le site source (HTTP 404) et n’a pas été remplacé par une autre illustration. Le contrôle de contact conserve sa présentation et permet d’appeler le numéro public.
 
-Les cartes conservent volontairement le moteur public isolé de Wix, hébergé sur `static.parastorage.com`, et Google Maps. Des enveloppes locales lui transmettent les réglages capturés : couleurs personnalisées, marqueur, adresse, zoom et contrôles. Le rendu a été vérifié dans l’aperçu local. Cette dépendance externe reste nécessaire pour conserver l’apparence exacte du widget ; le runtime du site Wix complet est retiré. Le contenu privé du Voyage intérieur, les membres, paiements et données CRM ne sont pas présents dans les captures publiques.
+Le propriétaire a ensuite demandé que tous les médias et ressources soient locaux. Les 19 dernières URL de médias Wix ont été localisées, y compris les images Open Graph/JSON-LD et une vidéo de fond. Les commentaires de source maps distantes et les appels externes du bouton Liberlo ont été retirés ou localisés. La génération contrôle aussi les ressources des pages HTML embarquées.
+
+Le propriétaire a explicitement choisi de conserver les cartes **Google Maps interactives** comme exception. Les enveloppes locales chargent désormais Google directement, sans moteur, script, icône ni configuration Wix. L’interface et les couleurs sont celles de l’intégration Google standard. La carte à la même adresse a été vérifiée dans l’aperçu local. Les anciens réglages du widget sont archivés uniquement dans `migration/reference/previous-map-configs.json`. Le contenu privé du Voyage intérieur, les membres, paiements et données CRM ne sont pas présents dans les captures publiques.
+
+L’audit automatique examine tous les fichiers texte déployables, les variantes responsives, les styles, les médias de métadonnées et les enveloppes HTML locales. Des tests vérifient qu’il rejette les hotlinks d’images, polices, styles, vidéos, SVG et métadonnées, tout en autorisant les liens de navigation et les iframes Google Maps approuvées. L’inventaire des ressources observées dans les documents principaux de six pages représentatives (`runtime-assets.json`) ne contient que l’origine locale ; les ressources internes à l’iframe Google constituent l’exception explicite. Le cache de l’aperçu a aussi été nettoyé de l’ancien transport cartographique.
 
 ## Validation et revue
+
+### Comparaison avec le site public actualisé
+
+Les captures `home-current-*` et `voyage-current-*` conservent la nouvelle version publique de ces deux pages. Leurs contenus ordinateur et téléphone ont été synchronisés, sans réintroduire les cartes virtualisées manquantes. L’espacement du menu commun est passé de 44 à 20 px sur Wix ; cette différence de 24 px est corrigée sur les pages importées.
+
+La comparaison des articles a détecté la suppression indue d’attributs de présentation Ricos : `data-breakout` applique notamment les marges intérieures du texte. Ils ont été restaurés dans les 11 articles, ordinateur et téléphone. La colonne de texte retrouve ses 740 px sur ordinateur, et les listes, images et retours à la ligne retrouvent leur disposition. Une règle de spacer de 14 px chargée tardivement par Wix est également conservée. Le contrôle de génération vérifie désormais la conservation de ces attributs ; la comparaison des polices et boîtes de texte est consignée dans `article-visual-parity.json`.
+
+À 1280 px, les 494 blocs de texte comparés dans les 11 articles ont les mêmes positions, dimensions, polices et couleurs (tolérance de 1 px). Les composants des huit pages principales et du blog sont comparés dans `current-parity.json` ; la seule différence restante mesurée provient d’une animation sur Qui suis-je. Les contrôles à 390 px de l’accueil, du Voyage intérieur, du blog et d’un article ne montrent pas de débordement horizontal (`responsive-review.json`). Ces derniers valident la mise en page locale issue des captures mobiles ; ils ne constituent pas une comparaison avec un téléphone réel. Les paires de captures actualisées sont nommées `live-current-*-desktop.png` et `local-current-*-desktop.png`.
+
+### Correction de la grille d’accueil
+
+Le contrôle initial des routes, textes et dimensions extérieures avait manqué une régression visuelle : le conteneur anonyme entre chaque carte et son image n’avait pas de hauteur. Les hauteurs en pourcentage de l’image et de la superposition de titre se résolvaient donc à zéro, laissant la grille vide. La feuille `fidelity.css` donne maintenant une hauteur à ce conteneur. Les 11 images et titres sont vérifiés au sein des cartes à 980, 1280, 1440 et 390 px (`home-gallery-check.json`) et une capture de la grille visible est conservée dans `screenshots/local-home-blog-desktop.png`. La présence des articles ou de leurs liens seule ne suffit pas à valider cette section.
 
 Vérifier la génération, les routes originales et les tags, les liens et ressources locales, les XML et l’absence de scripts du runtime Wix. Comparer les textes avec les sources et les positions des composants sur les pages principales. Les transformations animées et l’arrondi autorisé sont exclus d’une comparaison de géométrie.
 

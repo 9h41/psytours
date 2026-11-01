@@ -1,0 +1,35 @@
+[
+  {
+    "cards": 11,
+    "mainWidth": 320,
+    "mobile": true,
+    "overflow": false,
+    "route": "/",
+    "viewport": 390
+  },
+  {
+    "cards": 0,
+    "mainWidth": 320,
+    "mobile": true,
+    "overflow": false,
+    "route": "/voyage-interieur/",
+    "viewport": 390
+  },
+  {
+    "cards": 0,
+    "mainWidth": 320,
+    "mobile": true,
+    "overflow": false,
+    "route": "/blog/",
+    "viewport": 390
+  },
+  {
+    "articleText": 284,
+    "cards": 0,
+    "mainWidth": 320,
+    "mobile": true,
+    "overflow": false,
+    "route": "/post/blog-l-importance-du-cadre/",
+    "viewport": 390
+  }
+]

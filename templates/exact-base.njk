@@ -6,8 +6,8 @@
 <title>{{ title }}</title>
 <meta name="description" content="{{ description }}">
 <link rel="canonical" href="{{ canonicalUrl or (page.url | absolute) }}">
-{% for meta in originalMeta %}<meta property="{{ meta.property }}" content="{{ meta.content }}">{% endfor %}
-{% for entry in structuredData %}<script type="application/ld+json">{{ entry | json | safe }}</script>{% endfor %}
+{% for meta in originalMeta %}<meta property="{{ meta.property }}" content="{{ meta.content | metadataAssets }}">{% endfor %}
+{% for entry in structuredData %}<script type="application/ld+json">{{ entry | metadataAssets | json | safe }}</script>{% endfor %}
 <link rel="icon" href="/assets/original/favicon.png">
 {% for stylesheet in originalDesktopStyles or presentation.desktopStyles %}<link rel="stylesheet" href="{{ stylesheet }}" media="(min-width: 768px)" data-desktop-style>{% endfor %}
 {% for stylesheet in originalMobileStyles or presentation.mobileStyles %}<link rel="stylesheet" href="{{ stylesheet }}" media="(max-width: 767px)" data-mobile-style>{% endfor %}

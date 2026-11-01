@@ -1,4 +1,12 @@
 export default function (config) {
+  const assetOrigin = process.argv.includes('--serve') ? 'http://localhost:8080' : 'https://www.psy-tours.fr';
+  const metadataAssets = value => {
+    if (typeof value === 'string') return value.startsWith('/assets/') ? new URL(value, assetOrigin).href : value;
+    if (Array.isArray(value)) return value.map(metadataAssets);
+    if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, metadataAssets(item)]));
+    return value;
+  };
+  config.addFilter('metadataAssets', metadataAssets);
   config.addPassthroughCopy({ public: '/' });
   config.addCollection('posts', api => api.getFilteredByGlob('content/posts/*')
     .filter(item => !item.data.draft).sort((a, b) => b.date - a.date));

@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "eleventy --serve --port=8080 --output=.preview",
-    "check": "npm run build && python3 scripts/check_site.py",
+    "check": "npm run build && python3 scripts/check_site.py && python3 -m unittest discover -s scripts -p 'test_*.py'",
     "new": "node scripts/new-content.mjs"
   },
   "engines": {
