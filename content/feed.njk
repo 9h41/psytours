@@ -1,0 +1,7 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Les articles d’Elisa Gatay-Hauet</title><id>{{ site.url }}/blog</id><link href="{{ site.url }}/feed.xml" rel="self"/><link href="{{ site.url }}/blog"/><updated>{{ collections.posts[0].date | isoDate }}</updated><author><name>{{ site.name }}</name></author>
+{% for post in collections.posts %}<entry><title>{{ post.data.title }}</title><id>{{ post.url | canonical | absolute }}</id><link href="{{ post.url | canonical | absolute }}"/><published>{{ post.date | isoDate }}</published><updated>{{ post.data.updated | isoDate }}</updated><author><name>{{ post.data.author }}</name></author><summary>{{ post.data.description }}</summary></entry>{% endfor %}</feed>

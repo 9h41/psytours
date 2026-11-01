@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}{% if not title.includes('Elisa') %} · {{ site.name }}{% endif %}</title>
+  <meta name="description" content="{{ description or 'Gestalt-thérapie avec Elisa Gatay-Hauet. Consultations pour adultes à Tours et en visio.' }}">
+  <link rel="canonical" href="{{ page.url | canonical | absolute }}">
+  <meta property="og:type" content="{{ 'article' if author else 'website' }}">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description or site.profession }}">
+  <meta property="og:url" content="{{ page.url | canonical | absolute }}">
+  {% if image %}<meta property="og:image" content="{{ image | absolute }}">{% endif %}
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="Les articles d’Elisa" href="/feed.xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Elisa Gatay-Hauet — accueil"><span class="brand-mark" aria-hidden="true">e.</span><span>{{ site.name }}<small>Gestalt-thérapie · Tours & visio</small></span></a>
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      <a href="/qui-suis-je/"{% if page.url == '/qui-suis-je/' %} aria-current="page"{% endif %}>Qui suis-je</a>
+      <a href="/la-gestalt/"{% if page.url == '/la-gestalt/' %} aria-current="page"{% endif %}>La Gestalt</a>
+      <a href="/voyage-interieur/"{% if page.url == '/voyage-interieur/' %} aria-current="page"{% endif %}>Le Voyage intérieur</a>
+      <a href="/blog/"{% if page.url == '/blog/' %} aria-current="page"{% endif %}>Articles</a>
+    </nav>
+    <a class="button small header-booking" href="/prendre-rendez-vous/">Prendre rendez-vous <span aria-hidden="true">↗</span></a>
+    <details class="mobile-nav"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Navigation mobile">
+      <a href="/qui-suis-je/">Qui suis-je</a><a href="/la-gestalt/">La Gestalt</a><a href="/voyage-interieur/">Le Voyage intérieur</a><a href="/blog/">Articles</a><a href="/consultation-en-visio/">Consultation en visio</a><a href="/lectures/">Bibliographie</a><a href="/etique-et-déonthologie/">Cadre et éthique</a><a href="/prendre-rendez-vous/">Prendre rendez-vous</a>
+    </nav></details>
+  </header>
+  <main id="contenu">{{ content | safe }}</main>
+  <section class="contact-band" aria-labelledby="contact-title"><div><p class="eyebrow">Un premier pas, à votre rythme</p><h2 id="contact-title">Et si nous en parlions ?</h2><p>Un premier échange pour répondre à vos questions et faire connaissance.</p></div><div class="contact-actions"><a class="button" href="/prendre-rendez-vous/">Prendre rendez-vous <span aria-hidden="true">↗</span></a><a class="text-link" href="tel:{{ site.phoneLink }}">{{ site.phone }}</a></div></section>
+  <footer class="site-footer"><div class="footer-top"><div><a class="footer-name" href="/">{{ site.name }}</a><p>{{ site.profession }}<br>Consultations pour adultes · Cabinet & visio</p></div><address>{{ site.address }}<br><a href="tel:{{ site.phoneLink }}">{{ site.phone }}</a><br><a href="mailto:{{ site.email }}">{{ site.email }}</a></address><nav aria-label="Informations complémentaires"><a href="/consultation-en-visio/">Consultation en visio</a><a href="/lectures/">Bibliographie</a><a href="/etique-et-déonthologie/">Cadre et éthique</a><a href="/feed.xml">Suivre les articles · RSS</a><a href="https://www.linkedin.com/in/elisahauet/">LinkedIn</a><a href="https://twitter.com/elisahauet">Twitter</a><a href="https://www.instagram.com/ehauet">Instagram</a></nav></div><div class="footer-bottom"><span>SIRET {{ site.siret }}</span><span>Bienveillance · Non-jugement · Confidentialité</span></div></footer>
+</body>
+</html>

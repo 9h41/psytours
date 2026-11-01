@@ -1,0 +1,9 @@
+---
+title: Articles autour de la Gestalt
+description: Des articles d’Elisa Gatay-Hauet et de praticiens invités pour explorer la Gestalt, les émotions, les relations et le quotidien.
+permalink: /blog/
+layout: base.njk
+---
+<header class="page-heading"><p class="eyebrow">Le journal</p><h1>Un temps pour lire.<br><em>Un espace pour soi.</em></h1><p>Des mots pour éclairer ce que vous traversez.<br>La Gestalt, les relations, les émotions et la vie qui se joue au quotidien.</p></header>
+<nav class="category-nav" aria-label="Thèmes des articles"><a href="/blog/" aria-current="page">Tous les articles</a>{% for category in categories %}<a href="/blog/categories/{{ category.slug }}/">{{ category.title }}</a>{% endfor %}</nav>
+<section class="blog-list" aria-label="Articles">{% set posts = collections.posts %}{% include 'cards.njk' %}</section>

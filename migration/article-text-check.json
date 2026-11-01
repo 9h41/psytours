@@ -1,0 +1,61 @@
+{
+  "captured": "2026-11-01",
+  "method": "Word multiset comparison after adding separators for HTML block boundaries; verifies missing words, not prose order.",
+  "articles": [
+    {
+      "route": "/post/le-stress-l-identifier-et-le-réduire/",
+      "source_word_count": 743,
+      "missing_words": {}
+    },
+    {
+      "route": "/post/blog-l-importance-du-cadre/",
+      "source_word_count": 1144,
+      "missing_words": {}
+    },
+    {
+      "route": "/post/gestaltherapie/",
+      "source_word_count": 950,
+      "missing_words": {}
+    },
+    {
+      "route": "/post/stress-et-manque-de-clarté-comment-retrouver-les-idées-claires-quand-tout-se-mélange/",
+      "source_word_count": 1077,
+      "missing_words": {}
+    },
+    {
+      "route": "/post/l-ici-maintenant/",
+      "source_word_count": 127,
+      "missing_words": {}
+    },
+    {
+      "route": "/post/poser-ses-limites-arrêter-de-s-adapter-au-prix-de-soi/",
+      "source_word_count": 420,
+      "missing_words": {}
+    },
+    {
+      "route": "/post/estime-de-soi-quand-on-se-juge-plus-qu-on-ne-se-soutient/",
+      "source_word_count": 443,
+      "missing_words": {}
+    },
+    {
+      "route": "/post/difficultés-relationnelles-quand-ça-se-répète-quand-ça-se-tend-quand-ça-s-éteint/",
+      "source_word_count": 434,
+      "missing_words": {}
+    },
+    {
+      "route": "/post/je-suis-responsable/",
+      "source_word_count": 988,
+      "missing_words": {}
+    },
+    {
+      "route": "/post/blog-surcharge-mentale/",
+      "source_word_count": 506,
+      "missing_words": {}
+    },
+    {
+      "route": "/post/santé-mentale-en-2026-passer-du-discours-à-du-concret-tours-visio/",
+      "source_word_count": 679,
+      "missing_words": {}
+    }
+  ]
+}

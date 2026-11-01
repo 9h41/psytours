@@ -1,0 +1,17 @@
+{
+  "name": "psy-tours",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "eleventy --serve --port=8080 --output=.preview",
+    "check": "npm run build && python3 scripts/check_site.py",
+    "new": "node scripts/new-content.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.7"
+  }
+}

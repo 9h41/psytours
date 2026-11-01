@@ -1,0 +1,15 @@
+---
+pagination:
+  data: categories
+  size: 1
+  alias: category
+  addAllPagesToCollections: true
+permalink: "/blog/categories/{{ category.slug }}/"
+eleventyComputed:
+  title: "{{ category.title }}"
+  description: "Les articles sur le thème {{ category.title }}, par Elisa Gatay-Hauet et des praticiens invités."
+layout: base.njk
+---
+<header class="page-heading"><a class="breadcrumb" href="/blog/">← Tous les articles</a><p class="eyebrow">Explorer un thème</p><h1>{{ category.title }}</h1></header>
+<nav class="category-nav" aria-label="Thèmes des articles"><a href="/blog/">Tous les articles</a>{% for item in categories %}<a href="/blog/categories/{{ item.slug }}/"{% if item.slug == category.slug %} aria-current="page"{% endif %}>{{ item.title }}</a>{% endfor %}</nav>
+<section class="blog-list" aria-label="Articles de ce thème">{% set posts = collections.posts | categoryPosts(category.slug) %}{% if posts.length %}{% include 'cards.njk' %}{% else %}<p>Les prochains articles sur ce thème seront à découvrir ici.</p>{% endif %}</section>
