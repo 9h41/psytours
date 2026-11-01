@@ -50,3 +50,5 @@ Les nouveaux articles apparaissent sur le blog, dans les catégories corresponda
 Les images, vidéos, polices, fichiers et aperçus de partage sont hébergés localement avec le site. Les cartes interactives chargent directement Google Maps, seule exception externe approuvée ; elles utilisent son interface standard. Le formulaire de newsletter et les compteurs gardent leur présentation originale ; leur service en ligne n’est pas simulé. Consulter `docs/fidelity.md` pour les limites de services et la préparation de production.
 
 Le site Wix et le DNS de production n’ont pas été modifiés.
+
+Le dépôt source privé est [9h41/psytours](https://github.com/9h41/psytours), avec `main` pour la version stable et `preview` pour le travail en cours. Les contrôles GitHub Actions ne déploient rien. L'hébergement Pages est actuellement bloqué par le forfait Free de l'organisation pour les dépôts privés ; voir [docs/hosting.md](docs/hosting.md).

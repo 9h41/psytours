@@ -32,6 +32,8 @@
 - Metadata media paths are local in the sources. The metadata filter uses localhost during `--serve` and the site's own origin in production, so Open Graph and JSON-LD media URLs are absolute while referring to files deployed with the site.
 
 ## Commands and new content
+- The source repository is **private**, under **9h41/psytours**, not the owner's personal account. `main` is stable; `preview` is work in progress. Intended domains are `psy-tours.fr` and `preview.psy-tours.fr`. See `docs/hosting.md` before configuring hosting. GitHub Free currently blocks Pages for this private organization repository; one Pages site per repository also requires separate deployment targets for simultaneous preview and production.
+- DNS is currently managed by Wix (`ns2.wixdns.net`, `ns3.wixdns.net`); Gandi is the registrar. Do not confuse registration, DNS management and web hosting. The validation workflow does not deploy or modify DNS.
 - Prefix shell commands with `rtk`.
 - Node.js 22+ and Python 3: `rtk npm ci`, `rtk npm run dev`, `rtk npm run check`.
 - Preview: http://localhost:8080. Development writes `.preview/`; clean production builds recreate `dist/`. Do not let a development server and production build write the same output directory.
