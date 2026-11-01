@@ -10,6 +10,9 @@ body.menu-open #MENU_AS_CONTAINER_TOGGLE{z-index:100000!important}body.menu-open
 .additional-posts{max-width:940px;margin:30px auto 130px;font:18px/1.6 futura-lt-w01-light,sans-serif}.additional-posts h2{font:28px/1.4 futura-lt-w01-light,sans-serif}.additional-posts article{padding:25px;border:1px solid #dedbd4;margin:20px 0}
 /* Ricos loads this spacer rule after the initial server-rendered styles. */
 .jRZWf ._0qIEv,.jRZWf .jGXTj{cursor:pointer;height:14px;margin:0;padding:0;pointer-events:auto;position:relative;width:100%}
+/* Hide captured loading placeholders for unavailable post statistics. */
+[data-hook="post-main-actions__stats"],
+[data-hook="recent-post-list-item"] footer[data-hook="post-footer"]{display:none}
 @media(min-width:768px){
 /* Let a wrapped footer heading push the contact details down. The captured
    42px minimum and -15px margin made the two text blocks overlap. */

@@ -57,6 +57,7 @@
 - `/services-3` is an observed alias for `/prendre-rendez-vous/`; preserve its 301 in `_redirects` or equivalent host configuration. Preserve accented URLs and `/etique-et-déonthologie` exactly.
 - Newsletter, likes, view counts and comments depend on services. Their original presentation is retained; counts are captured values. Do not fake successful subscriptions or persistence. The local form explains unavailability only if submitted.
 - The owner accepts losing live blog views, comments and likes. Newsletter/contact integration is deferred; do not prioritize it. Private course access is upcoming and will be wired later.
+- The owner requested removal of the views/comments/likes placeholder pills from article footers and recent-post cards below articles. The shared `fidelity.css` rule applies to both desktop and mobile article layouts; preserve the article's categories and share controls.
 - The desktop footer heading must flow above its contact details when it wraps. Its captured 42px minimum height and negative bottom margin caused overlapping text; the desktop adapter in `fidelity.css` removes that dependency. Preserve the mobile footer layout.
 - The public Voyage intérieur presentation is copied; private videos, exercises, member accounts, payments and CRM data cannot be exported from the public pages. Do not invent working private functionality.
 - The Liberlo embed references a logo URL that returns 404 on the source. Its missing image is preserved locally; the booking link remains intact. Do not fabricate a different logo.
