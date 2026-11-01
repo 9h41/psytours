@@ -5,9 +5,7 @@
 /* Runtime-free menu: preserve the original appearance, reveal its existing links. */
 [data-static-open="true"]{visibility:visible!important;opacity:1!important;display:block!important;transform:none!important}
 html{scroll-behavior:auto!important}
-.fa-phone::before{content:"\f095"}.fa-solid{display:inline-block;font-family:"Font Awesome 6 Free";font-style:normal;line-height:1}
 body.menu-open #MENU_AS_CONTAINER_TOGGLE{z-index:100000!important}body.menu-open ._2OyzB span{background:transparent!important}body.menu-open ._2OyzB span::before{top:0!important;transform:rotate(45deg)!important}body.menu-open ._2OyzB span::after{bottom:0!important;transform:rotate(-45deg)!important}
-html body .czm-popup-close{background-image:none}html body .czm-popup-close::after{content:'×';font:16px/10px Arial;color:white}
 .new-content{max-width:940px;margin:40px auto 150px;padding:30px;border:1px solid #e3e0d8;font:18px/1.6 futura-lt-w01-light,sans-serif}.new-content h1{font:40px/1.25 fraunces_120pt-light,serif;margin:0 0 28px}.new-content h2{font:28px/1.4 futura-lt-w01-light,sans-serif;margin:28px 0 14px}.new-content p{margin:0 0 18px}.new-content img{max-width:100%;height:auto}.new-content a{text-decoration:underline}
 .additional-posts{max-width:940px;margin:30px auto 130px;font:18px/1.6 futura-lt-w01-light,sans-serif}.additional-posts h2{font:28px/1.4 futura-lt-w01-light,sans-serif}.additional-posts article{padding:25px;border:1px solid #dedbd4;margin:20px 0}
 /* Ricos loads this spacer rule after the initial server-rendered styles. */

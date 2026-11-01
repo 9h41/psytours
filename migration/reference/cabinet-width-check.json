@@ -1,0 +1,77 @@
+[
+  {
+    "image": {
+      "height": 539,
+      "left": 0,
+      "width": 980
+    },
+    "phoneWidgets": 0,
+    "section": {
+      "height": 539,
+      "left": 0,
+      "width": 980
+    },
+    "srcset": null,
+    "viewport": 980
+  },
+  {
+    "image": {
+      "height": 539,
+      "left": 0,
+      "width": 1280
+    },
+    "phoneWidgets": 0,
+    "section": {
+      "height": 539,
+      "left": 0,
+      "width": 1280
+    },
+    "srcset": null,
+    "viewport": 1280
+  },
+  {
+    "image": {
+      "height": 539,
+      "left": 0,
+      "width": 1440
+    },
+    "phoneWidgets": 0,
+    "section": {
+      "height": 539,
+      "left": 0,
+      "width": 1440
+    },
+    "srcset": null,
+    "viewport": 1440
+  },
+  {
+    "image": {
+      "height": 539,
+      "left": 0,
+      "width": 1920
+    },
+    "phoneWidgets": 0,
+    "section": {
+      "height": 539,
+      "left": 0,
+      "width": 1920
+    },
+    "srcset": null,
+    "viewport": 1920
+  },
+  {
+    "image": {
+      "height": 306,
+      "left": 35,
+      "width": 320
+    },
+    "phoneWidgets": 0,
+    "section": {
+      "height": 306,
+      "left": 35,
+      "width": 320
+    },
+    "srcset": "/assets/original/74f0409954cdbdf35234.jpg 1x, /assets/original/f40863d449c1d3bf257d.jpg 2x, /assets/original/5556e91f36c9cda7f3e7.jpg 3x",
+    "viewport": 390
+  }
+]

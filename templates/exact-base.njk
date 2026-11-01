@@ -13,13 +13,11 @@
 {% for stylesheet in originalMobileStyles or presentation.mobileStyles %}<link rel="stylesheet" href="{{ stylesheet }}" media="(max-width: 767px)" data-mobile-style>{% endfor %}
 <link rel="stylesheet" href="/assets/fidelity.css">
 <link rel="stylesheet" href="/assets/original/repeater-spacing.css">
-{% include 'original/contact-styles.njk' %}
 <script src="/assets/local-layout.js" defer></script>
 </head>
 <body>
 <div id="desktop-layout">{{ content | safe }}</div>
 {% if mobileTemplate %}<template id="mobile-layout">{% include mobileTemplate %}</template>{% endif %}
-{% include 'original/contact.njk' %}
 <template id="category-overflow">{% include 'original/category-overflow.njk' %}</template>
 </body>
 </html>

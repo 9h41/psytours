@@ -54,10 +54,6 @@ document.addEventListener('click', event => {
     trigger.setAttribute('aria-expanded', String(open));
     document.body.classList.toggle('menu-open', open);
   }
-  if (event.target.closest('.czm-button,.czm-popup-close')) {
-    document.querySelector('.czm-chat-support').classList.toggle('czm-popup-show');
-  }
-  if (event.target.closest('.czm-popup-start-chat-button')) location.href = 'tel:+33652147436';
 });
 document.addEventListener('keydown', event => {
   if (event.target.matches('.item-link-wrapper .item-action') && event.key === 'Enter') event.target.click();
