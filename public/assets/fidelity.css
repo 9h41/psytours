@@ -13,6 +13,9 @@ html body .czm-popup-close{background-image:none}html body .czm-popup-close::aft
 /* Ricos loads this spacer rule after the initial server-rendered styles. */
 .jRZWf ._0qIEv,.jRZWf .jGXTj{cursor:pointer;height:14px;margin:0;padding:0;pointer-events:auto;position:relative;width:100%}
 @media(min-width:768px){
+/* Let a wrapped footer heading push the contact details down. The captured
+   42px minimum and -15px margin made the two text blocks overlap. */
+#SITE_FOOTER #comp-m4r9bjn311{--min-height:0px;min-height:0!important;margin-bottom:4px!important}
 /* Current live header: 20px below the navigation, previously 44px. Keep
    older imported page styles from adding an extra 24px above their content. */
 #comp-m4r9bjmu4{margin-bottom:20px!important}

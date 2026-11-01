@@ -49,6 +49,8 @@
 - Wix injects final repeater spacing after startup. `repeater-spacing.css` preserves the final static layout; the homepage gallery has a small responsive grid adapter matching the original dimensions.
 - `/services-3` is an observed alias for `/prendre-rendez-vous/`; preserve its 301 in `_redirects` or equivalent host configuration. Preserve accented URLs and `/etique-et-déonthologie` exactly.
 - Newsletter, likes, view counts and comments depend on services. Their original presentation is retained; counts are captured values. Do not fake successful subscriptions or persistence. The local form explains unavailability only if submitted.
+- The owner accepts losing live blog views, comments and likes. Newsletter/contact integration is deferred; do not prioritize it. Private course access is upcoming and will be wired later.
+- The desktop footer heading must flow above its contact details when it wraps. Its captured 42px minimum height and negative bottom margin caused overlapping text; the desktop adapter in `fidelity.css` removes that dependency. Preserve the mobile footer layout.
 - The public Voyage intérieur presentation is copied; private videos, exercises, member accounts, payments and CRM data cannot be exported from the public pages. Do not invent working private functionality.
 - The Liberlo embed references a logo URL that returns 404 on the source. Its missing image is preserved locally; the booking link remains intact. Do not fabricate a different logo.
 - The old `docs/migration.md` describes the rejected first version; `docs/fidelity.md` supersedes its design and implementation statements.
