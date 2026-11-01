@@ -1,0 +1,12 @@
+
+    @media (forced-colors: active) {
+      #SITE_CONTAINER.focus-ring-active
+        :not(.has-custom-focus):not(.ignore-focus):not([tabindex='-1']):focus,
+      #SITE_CONTAINER.focus-ring-active
+        :not(.has-custom-focus):not(.ignore-focus):not([tabindex='-1']):focus
+        ~ .wixSdkShowFocusOnSibling {
+        outline: 2px solid CanvasText;
+        outline-offset: 2px;
+      }
+    }
+  

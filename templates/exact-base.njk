@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" id="local-viewport">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ canonicalUrl or (page.url | absolute) }}">
+{% for meta in originalMeta %}<meta property="{{ meta.property }}" content="{{ meta.content }}">{% endfor %}
+{% for entry in structuredData %}<script type="application/ld+json">{{ entry | json | safe }}</script>{% endfor %}
+<link rel="icon" href="/assets/original/favicon.png">
+{% for stylesheet in originalDesktopStyles or presentation.desktopStyles %}<link rel="stylesheet" href="{{ stylesheet }}" media="(min-width: 768px)" data-desktop-style>{% endfor %}
+{% for stylesheet in originalMobileStyles or presentation.mobileStyles %}<link rel="stylesheet" href="{{ stylesheet }}" media="(max-width: 767px)" data-mobile-style>{% endfor %}
+<link rel="stylesheet" href="/assets/fidelity.css">
+<link rel="stylesheet" href="/assets/original/repeater-spacing.css">
+{% include 'original/contact-styles.njk' %}
+<script src="/assets/local-layout.js" defer></script>
+</head>
+<body>
+<div id="desktop-layout">{{ content | safe }}</div>
+{% if mobileTemplate %}<template id="mobile-layout">{% include mobileTemplate %}</template>{% endif %}
+{% include 'original/contact.njk' %}
+<template id="category-overflow">{% include 'original/category-overflow.njk' %}</template>
+</body>
+</html>

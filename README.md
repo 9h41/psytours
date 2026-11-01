@@ -1,56 +1,52 @@
-# Psy-Tours
+# Psy-Tours — copie locale du site Wix
 
-Version statique du site d’Elisa Gatay-Hauet, psychopraticienne en Gestalt-thérapie à Tours.
+Cette version reprend la présentation de https://www.psy-tours.fr : textes, polices, couleurs, images, menus, pied de page fixe et blog. La seule modification visuelle demandée est l’arrondi supérieur de la photo principale. Les animations Wix sont retirées.
 
-Le site final est constitué de fichiers HTML, d’une feuille CSS, d’images locales et d’un PDF. Aucun serveur applicatif, compte CMS, base de données ou JavaScript côté visiteur n’est nécessaire. Eleventy sert uniquement à fabriquer ces fichiers à partir de textes Markdown et de modèles partagés.
+Le premier essai, avec une présentation différente, est conservé dans le commit Git `bb7b400`.
 
-## Modifier le site avec un agent
+## Utilisation avec un agent
 
-Vous pouvez simplement demander, par exemple :
+Vous pouvez demander simplement :
 
-- « Prépare un article sur la difficulté à dire non, en brouillon, avec le même ton que les articles existants. »
-- « Voici mon texte : ajoute-le comme article, dans la catégorie Relations, puis montre-moi le résultat. »
-- « Ajoute une page sur les consultations en visio et propose un lien dans le menu. »
-- « Remplace le numéro de téléphone partout sur le site. »
-- « Montre-moi les changements sur téléphone avant toute mise en ligne. »
+- « Lance le site en local pour que je le relise. »
+- « Remplace ce paragraphe sur la page Qui suis-je, sur ordinateur et téléphone. »
+- « Prépare ce texte comme nouvel article, sans le publier. »
+- « Ajoute une page sur ce sujet, en gardant la présentation actuelle. »
 
-L’agent lit `AGENTS.md`, prépare le contenu, génère un aperçu et contrôle les liens. Une modification locale ou un changement de statut de brouillon **ne met rien en ligne**. La mise en ligne doit être demandée explicitement.
+L’agent doit lire `AGENTS.md`, préparer les changements, vérifier les deux mises en page et montrer le résultat. Rien n’est publié automatiquement.
 
-## Commandes pour les agents
+## Lancer et vérifier
 
-Pré-requis : Node.js 22 ou plus récent ; Python 3 pour les contrôles.
+Prérequis : Node.js 22+ et Python 3.
 
 ```sh
 rtk npm ci
 rtk npm run dev
-# Aperçu : http://localhost:8080
+# http://localhost:8080
 
 rtk npm run check
-# Résultat à héberger : dist/ uniquement
+# Fichiers à héberger : dist/ uniquement
 
-rtk npm run new -- post poser-ses-limites "Poser ses limites"
-rtk npm run new -- page mon-accompagnement "Mon accompagnement"
+rtk npm run new -- post mon-article "Titre de mon article"
+rtk npm run new -- page ma-page "Titre de ma page"
 ```
 
-Les nouveaux fichiers commencent avec `draft: true` : ils sont exclus du HTML, du blog, des catégories, du flux et du sitemap. Pour un aperçu du texte final, l’agent peut passer `draft` à `false` localement après validation éditoriale. Le déploiement reste une action distincte.
+Les nouveaux fichiers sont des brouillons Markdown. Les pages migrées utilisent du HTML/Nunjucks pour garder leur mise en forme exacte. Eleventy génère les fichiers statiques ; aucun CMS ou serveur applicatif n’est nécessaire pour les servir.
 
 ## Organisation
 
-| Emplacement | Contenu |
+| Dossier | Usage |
 | --- | --- |
-| `content/pages/` | Textes des pages, dont l’accueil |
-| `content/posts/` | Articles, dates, auteurs et catégories |
-| `data/site.json` | Coordonnées et lien de réservation partagés |
-| `data/categories.json` | Catégories et adresses historiques |
-| `templates/` | Modèles communs et navigation |
-| `public/assets/` | Images WebP, PDF, favicon et CSS |
-| `migration/` | Archives Wix, captures et inventaires ; jamais déployés |
-| `docs/migration.md` | Décisions, limites et préparation du changement d’hébergement |
+| `content/pages/` | Pages existantes et nouvelles pages |
+| `content/posts/` | Articles |
+| `content/archives/` | Catégories existantes |
+| `templates/original/` | Présentation mobile, éléments partagés et menus d’origine |
+| `public/assets/original/` | Polices et images locales |
+| `public/assets/fidelity.css` | Arrondi et adaptation statique des mises en page |
+| `migration/` | Sources archivées, inventaires et preuves visuelles, jamais déployés |
 
-Les articles apparaissent automatiquement sur le blog, dans leurs catégories, dans le flux Atom et dans le sitemap. L’accueil montre les trois articles les plus récents. Une nouvelle page doit recevoir un lien pertinent dans un menu ou dans un texte existant.
+Les nouveaux articles apparaissent sur le blog, dans les catégories correspondantes, le sitemap et le flux. Une nouvelle page doit recevoir un lien dans le contenu ou un menu.
 
-## Mise en ligne ultérieure
+Le formulaire de newsletter et les compteurs gardent leur présentation originale ; leur service en ligne n’est pas simulé. Les cartes utilisent Google Maps et le moteur cartographique public isolé de Wix pour conserver leur apparence. Consulter `docs/fidelity.md` pour les limites de services et la préparation de production.
 
-Lire `docs/migration.md`. `dist/` peut être servi par un hébergeur statique. La configuration doit gérer les répertoires avec `index.html`, les URL accentuées, la page 404 et les redirections. Ne pas remplacer les pages inconnues par l’accueil avec une réponse 200.
-
-Le site Wix de production n’a pas été modifié.
+Le site Wix et le DNS de production n’ont pas été modifiés.

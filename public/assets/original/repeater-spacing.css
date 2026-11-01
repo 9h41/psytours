@@ -1,0 +1,5 @@
+/* The repeater containing block includes its original 30px column gutter. */
+@media(min-width:768px){#comp-m4sa18bf4_wrapper, #comp-m4sa18bf4_wrapper > fluid-columns-repeater { height: 406px; display: block;}
+#comp-m4sa18bf4_wrapper #comp-m4sa18bi__item1 {position: absolute; top: 15px; inset-inline-start: calc(50% - 505.5px); margin: 0;}
+#comp-m4sa18bf4_wrapper #comp-m4sa18bi__item2 {position: absolute; top: 15px; inset-inline-start: calc(50% - 158.5px); margin: 0;}
+#comp-m4sa18bf4_wrapper #comp-m4sa18bi__item-kemq3wiu {position: absolute; top: 15px; inset-inline-start: calc(50% + 188.5px); margin: 0;}}

@@ -1,0 +1,59 @@
+/* END STYLABLE DIRECTIVE RULES */
+
+#comp-mkfhm89k .style-mkfhm8a4__root{
+    -st-extends: StylableButton;
+    transition: all 0.2s ease, visibility 0s;
+    background: #FEFAF0;
+    border-radius: 50px;
+    border: 2px solid #C74300
+}
+
+/* START STYLABLE DIRECTIVE RULES */
+
+#comp-mkfhm89k .style-mkfhm8a4__root:hover{
+    border-radius: 20px;
+    background: #C74300;
+    border: 2px solid #C74300
+}
+
+#comp-mkfhm89k .style-mkfhm8a4__root:hover .StylableButton2545352419__icon{
+    width: 26px;
+    height: 26px
+}
+
+#comp-mkfhm89k .style-mkfhm8a4__root:hover .StylableButton2545352419__label {
+    color: #FFFFFF;
+}
+
+#comp-mkfhm89k .style-mkfhm8a4__root[disabled]{
+    background: #E2E2E2
+}
+
+#comp-mkfhm89k .style-mkfhm8a4__root[disabled] .StylableButton2545352419__label{
+    color: #8F8F8F
+}
+
+#comp-mkfhm89k .style-mkfhm8a4__root[disabled] .StylableButton2545352419__icon{
+    fill: #8F8F8F
+}
+
+#comp-mkfhm89k .style-mkfhm8a4__root .StylableButton2545352419__container{
+    transition: inherit
+}
+
+#comp-mkfhm89k .style-mkfhm8a4__root .StylableButton2545352419__label{
+    transition: inherit;
+    font-size: 16px;
+    display: initial;
+    font-family: futura-lt-w01-light,sans-serif;
+    color: #C74300;
+    letter-spacing: 0.05em
+}
+
+#comp-mkfhm89k .style-mkfhm8a4__root .StylableButton2545352419__icon{
+    transition: inherit;
+    fill: #8B6755;
+    width: 20px;
+    height: 20px;
+    display: none
+}

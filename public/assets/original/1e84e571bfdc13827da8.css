@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("/assets/original/87a0e2ccb1a05015d2ee.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("/assets/original/c1f7912590e9040b1cae.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/original/da45a78c1beca669238b.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/original/b06eee4134e9a6165dc4.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/original/2ee451fcb8630effa9b3.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/original/1021f38ed4a384de19e3.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/original/3054167f15a4f4ee357a.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/assets/original/f52d8dcd5c9dcb1aae86.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/assets/original/fbe2a8aec18daeae164a.ttf") format('truetype');
+}

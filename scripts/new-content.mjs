@@ -14,7 +14,7 @@ const fields = {
   permalink: `${kind === 'post' ? '/post' : ''}/${slug}/`,
   layout: `${kind}.njk`, draft: true,
   ...(kind === 'post' ? { tags: ['posts'], date: new Date().toISOString(), updated: new Date().toISOString(),
-    author: 'Elisa Gatay-Hauet', image: '/assets/e9956e39b637e044.webp', imageAlt: 'Elisa Gatay-Hauet', categories: [] } : {})
+    author: 'Elisa Gatay-Hauet', image: '/assets/original/favicon.png', imageAlt: 'Elisa Gatay-Hauet', categories: [], additionalPost: true } : {})
 };
 writeFileSync(target, '---\n' + Object.entries(fields).map(([key, value]) => `${key}: ${JSON.stringify(value)}`).join('\n') + '\n---\n\nVotre texte commence ici.\n', { flag: 'wx' });
 console.log(`Brouillon créé : ${target}\nIl est exclu du site tant que draft: true.`);

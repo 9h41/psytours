@@ -1,8 +1,4 @@
 ---
 layout: base.njk
 ---
-<header class="post-heading"><a class="breadcrumb" href="/blog/">← Tous les articles</a><p class="eyebrow">Le journal · Gestalt & quotidien</p><h1>{{ title }}</h1><p class="post-meta">{{ author }} <span aria-hidden="true">·</span> <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time></p>{% if updated != date %}<p class="post-meta">Mis à jour le {{ updated | readableDate }}</p>{% endif %}</header>
-<article class="prose post-body">{{ content | safe }}</article>
-{% if historicalPrice %}<aside class="article-note">Cet article mentionne un tarif en vigueur au moment de sa rédaction. Retrouvez <a href="/prendre-rendez-vous/">le tarif et les modalités actuels</a>.</aside>{% endif %}
-{% if categories.length %}<nav class="post-categories" aria-label="Thèmes de l’article">{% for category in categories %}<a href="/blog/categories/{{ category.slug }}/">{{ category.title }}</a>{% endfor %}</nav>{% endif %}
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ title | json | safe }},"description":{{ description | json | safe }},"author":{"@type":"Person","name":{{ author | json | safe }}},"datePublished":{{ date | isoDate | json | safe }},"dateModified":{{ updated | isoDate | json | safe }},"image":{{ image | absolute | json | safe }},"mainEntityOfPage":{{ page.url | canonical | absolute | json | safe }}}</script>
+<article class="new-post"><header><h1>{{ title }}</h1><p>{{ author }} · <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time></p></header>{{ content | safe }}</article>

@@ -1,0 +1,26 @@
+/* END STYLABLE DIRECTIVE RULES */
+
+#comp-m64u6pxr .style-ms5wr2nl__root{-st-extends: StylableButton;transition: all 0.2s ease, visibility 0s;border-radius: 50px;border: 2px solid rgb(139, 103, 85);background: #A0626A}
+
+/* START STYLABLE DIRECTIVE RULES */
+
+#comp-m64u6pxr .style-ms5wr2nl__root:hover{border-radius: 20px;background: #CFCBBF}
+
+#comp-m64u6pxr .style-ms5wr2nl__root:hover .StylableButton2545352419__icon{width: 26px;height: 26px}
+
+#comp-m64u6pxr .style-ms5wr2nl__root:hover .StylableButton2545352419__label {
+    font-weight: 700;
+    color: #FEFAF0;
+}
+
+#comp-m64u6pxr .style-ms5wr2nl__root:disabled{background: #E2E2E2}
+
+#comp-m64u6pxr .style-ms5wr2nl__root:disabled .StylableButton2545352419__label{color: #8F8F8F}
+
+#comp-m64u6pxr .style-ms5wr2nl__root:disabled .StylableButton2545352419__icon{fill: #8F8F8F}
+
+#comp-m64u6pxr .style-ms5wr2nl__root .StylableButton2545352419__container{transition: inherit}
+
+#comp-m64u6pxr .style-ms5wr2nl__root .StylableButton2545352419__label{transition: inherit;font-size: 16px;font-family: helvetica-w01-light,helvetica-w02-light,sans-serif;margin: 0px 5.5px 0px 0px;color: #FEFAF0;display: initial;font-weight: 700}
+
+#comp-m64u6pxr .style-ms5wr2nl__root .StylableButton2545352419__icon{transition: inherit;fill: #8B6755;width: 20px;height: 20px;margin: 0px 0px 0px 5.5px;display: none}

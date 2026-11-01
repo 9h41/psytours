@@ -1,0 +1,59 @@
+/* END STYLABLE DIRECTIVE RULES */
+
+#comp-mkf37h5n .style-ms5wyvf7__root{
+    -st-extends: StylableButton;
+    transition: all 0.2s ease, visibility 0s;
+    border-radius: 50px;
+    background: #A0626A;
+    border: 0px solid rgb(199, 67, 0)
+}
+
+/* START STYLABLE DIRECTIVE RULES */
+
+#comp-mkf37h5n .style-ms5wyvf7__root:hover{
+    border-radius: 20px;
+    background: #C74300;
+    border: 2px solid #C74300
+}
+
+#comp-mkf37h5n .style-ms5wyvf7__root:hover .StylableButton2545352419__icon{
+    width: 26px;
+    height: 26px
+}
+
+#comp-mkf37h5n .style-ms5wyvf7__root:hover .StylableButton2545352419__label {
+    color: #FFFFFF;
+}
+
+#comp-mkf37h5n .style-ms5wyvf7__root:disabled{
+    background: #E2E2E2
+}
+
+#comp-mkf37h5n .style-ms5wyvf7__root:disabled .StylableButton2545352419__label{
+    color: #8F8F8F
+}
+
+#comp-mkf37h5n .style-ms5wyvf7__root:disabled .StylableButton2545352419__icon{
+    fill: #8F8F8F
+}
+
+#comp-mkf37h5n .style-ms5wyvf7__root .StylableButton2545352419__container{
+    transition: inherit
+}
+
+#comp-mkf37h5n .style-ms5wyvf7__root .StylableButton2545352419__label{
+    transition: inherit;
+    font-size: 16px;
+    display: initial;
+    font-family: futura-lt-w01-light,sans-serif;
+    letter-spacing: 0.05em;
+    color: #FEFAF0
+}
+
+#comp-mkf37h5n .style-ms5wyvf7__root .StylableButton2545352419__icon{
+    transition: inherit;
+    fill: #8B6755;
+    width: 20px;
+    height: 20px;
+    display: none
+}

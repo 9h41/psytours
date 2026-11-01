@@ -1,0 +1,104 @@
+[
+  {
+    "route": "/",
+    "compared": 101,
+    "differences": []
+  },
+  {
+    "route": "/qui-suis-je/",
+    "compared": 73,
+    "differences": [
+      {
+        "id": "comp-m4r9bjoe16",
+        "delta": 385.73492431640625,
+        "source": {
+          "h": 424.76556396484375,
+          "id": "comp-m4r9bjoe16",
+          "transform": "matrix(1, 0, 0, 1, 0, 385.735)",
+          "w": 466,
+          "x": 285,
+          "y": 638.9380493164062
+        },
+        "local": {
+          "h": 424.765625,
+          "id": "comp-m4r9bjoe16",
+          "transform": "none",
+          "w": 466,
+          "x": 285,
+          "y": 253.203125
+        }
+      },
+      {
+        "id": "comp-ms4oio58",
+        "delta": 287.6588134765625,
+        "source": {
+          "h": 316.765625,
+          "id": "comp-ms4oio58",
+          "transform": "matrix(1, 0, 0, 1, 0, 287.659)",
+          "w": 918,
+          "x": 283,
+          "y": 1028.8619384765625
+        },
+        "local": {
+          "h": 316.765625,
+          "id": "comp-ms4oio58",
+          "transform": "none",
+          "w": 918,
+          "x": 283,
+          "y": 741.203125
+        }
+      }
+    ]
+  },
+  {
+    "route": "/la-gestalt/",
+    "compared": 76,
+    "differences": []
+  },
+  {
+    "route": "/voyage-interieur/",
+    "compared": 26,
+    "differences": [
+      {
+        "id": "comp-msgkyojy",
+        "delta": 63.327423095703125,
+        "source": {
+          "h": 309.622802734375,
+          "id": "comp-msgkyojy",
+          "transform": "none",
+          "w": 387.3274230957031,
+          "x": 126.33627319335938,
+          "y": 843.2823486328125
+        },
+        "local": {
+          "h": 259,
+          "id": "comp-msgkyojy",
+          "transform": "none",
+          "w": 324,
+          "x": 158,
+          "y": 868.59375
+        }
+      }
+    ]
+  },
+  {
+    "route": "/prendre-rendez-vous/",
+    "compared": 61,
+    "differences": []
+  },
+  {
+    "route": "/consultation-en-visio/",
+    "compared": 68,
+    "differences": []
+  },
+  {
+    "route": "/lectures/",
+    "compared": 61,
+    "differences": []
+  },
+  {
+    "route": "/etique-et-déonthologie/",
+    "compared": 89,
+    "differences": []
+  }
+]

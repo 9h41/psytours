@@ -1,0 +1,2 @@
+{% set newPosts = collections.posts | additionalPosts(page.url) %}
+{% if newPosts.length %}<section class="additional-posts">{% for post in newPosts %}<article><a href="{{ post.url }}"><h2>{{ post.data.title }}</h2></a><p>{{ post.date | readableDate }} · {{ post.data.author }}</p><p>{{ post.data.description }}</p></article>{% endfor %}</section>{% endif %}

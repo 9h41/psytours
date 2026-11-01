@@ -1,8 +1,10 @@
 export default function (config) {
   config.addPassthroughCopy({ public: '/' });
-  config.addCollection('posts', api => api.getFilteredByGlob('content/posts/*.md')
+  config.addCollection('posts', api => api.getFilteredByGlob('content/posts/*')
     .filter(item => !item.data.draft).sort((a, b) => b.date - a.date));
   config.addFilter('limit', (items, count) => items.slice(0, count));
+  config.addFilter('additionalPosts', (items, url) => items.filter(item => item.data.additionalPost &&
+    (!url?.startsWith('/blog/categories/') || (item.data.categories || []).some(c => url === `/blog/categories/${c.slug}/`))));
   config.addFilter('readableDate', date => new Intl.DateTimeFormat('fr-FR', {
     day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Paris'
   }).format(new Date(date)));
