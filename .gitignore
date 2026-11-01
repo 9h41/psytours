@@ -2,6 +2,7 @@ node_modules/
 dist/
 .preview/
 .pages/
+.blog-preview/
 .DS_Store
 __pycache__/
 .env

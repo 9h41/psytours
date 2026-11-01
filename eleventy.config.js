@@ -1,4 +1,10 @@
 export default function (config) {
+  // Only the dedicated local watch process may render one selected draft.
+  // Drafts remain excluded from collections, feeds and normal production builds.
+  const previewSlug = process.argv.includes('--watch') && !process.argv.includes('--serve')
+    ? process.env.PSYTOURS_PREVIEW_DRAFT : undefined;
+  const previewDraft = data => previewSlug && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(previewSlug) &&
+    data.page?.inputPath?.replaceAll('\\', '/').endsWith(`/content/posts/${previewSlug}.md`);
   const assetOrigin = process.argv.includes('--serve') ? 'http://localhost:8080' : 'https://www.psy-tours.fr';
   const metadataAssets = value => {
     if (typeof value === 'string') return value.startsWith('/assets/') ? new URL(value, assetOrigin).href : value;
@@ -22,7 +28,8 @@ export default function (config) {
   config.addFilter('categoryPosts', (posts, category) => posts.filter(p => (p.data.categories || []).some(c => c.slug === category)));
   config.addFilter('canonical', url => url);
   config.addGlobalData('eleventyComputed', {
-    permalink: data => data.draft ? false : data.permalink
+    permalink: data => data.draft && !previewDraft(data) ? false : data.permalink,
+    eleventyExcludeFromCollections: data => Boolean(data.draft || data.eleventyExcludeFromCollections)
   });
   config.addTransform('lazy-content-images', function (html) {
     if (typeof this.page.outputPath !== 'string' || !this.page.outputPath.endsWith('.html')) return html;

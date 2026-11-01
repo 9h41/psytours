@@ -14,6 +14,7 @@
 - Never publish, push to a remote, change DNS, replace production, or submit visitor information without explicit authorization. Local previews are authorized. Do not stop a preview the user asked to keep running.
 
 ## Working with the nontechnical owner
+- Use plain French for all editorial and other nontechnical conversations, including the blog-writing wizard, questions, suggestions, previews and feedback. Technical discussions may be in English. The owner may give technical instructions in English; this does not change the editor's language.
 - Accept natural-language requests and handle the files, preview and checks for the owner. Do not require manual Wix Editor work.
 - The site is French. Preserve **psychopraticienne en Gestalt-thérapie**, original author/photo credits, dates, guest attributions, links and testimonials.
 - Do not invent qualifications, clinical claims, prices, reimbursement guarantees, availability, course access or customer reviews.
@@ -45,6 +46,8 @@
 - Eleventy passthrough watching may leave deleted assets in `.preview/`. When removing public assets, remove their obsolete generated counterparts or clean/restart the preview, then audit `.preview/` too. Do not leave an unused old Wix iframe/configuration accessible in the preview output.
 - Deploy **only `dist/`**. Never deploy `.pixel/`, `migration/`, dependencies or credentials.
 - `rtk npm run new -- post slug "Titre"` or `... page ...` creates a Markdown draft using the original theme's scaffolding. New files start with `draft: true` and must stay out of output, collections, sitemap and feed.
+- Use the repository-local `psy-tours-blog-post` skill when guiding the owner through a new article. Its isolated `scripts/blog_preview.py` server renders only the selected Markdown draft for review, without adding it to collections, the sitemap, the feed or normal builds. It uses a separate ignored `.blog-preview/` output, auto-refreshes, and stops after 30 minutes of inactivity or when the agent runs `stop` at the end of the writing task. Never stop the separate user-requested preview on port 8080.
+- When an unfinished blog-writing conversation resumes, automatically run `rtk proxy python3 scripts/blog_preview.py resume`: it reuses the active preview or restarts the last managed draft, preferring its previous port when available. Give the owner the resulting link, especially if the old port is occupied. Do not restart a completed or unrelated writing task automatically.
 - New posts use `additionalPost: true` to appear in the blog's extension point and relevant category archives without altering the original existing cards. Dates, authors and category objects belong in front matter. Check both layouts when adding content.
 - New standalone pages need an intentional link from existing content or a menu. Existing imported pages are HTML/Nunjucks to preserve their formatting; do not convert them wholesale to Markdown again.
 - Activation in a local build is not publication authorization. A clean build removes stale HTML after deletion or returning content to draft status.
