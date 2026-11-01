@@ -10,17 +10,23 @@ SITE_HOSTS={'www.psy-tours.fr','psy-tours.fr','localhost:8080'}
 WIX_HOST=re.compile(r'(?:[\w-]+\.)*(?:wixstatic\.com|parastorage\.com|wix\.com)',re.I)
 MEDIA_FIELDS={'image','logo','thumbnailUrl','contentUrl','embedUrl'}
 
-def audit_assets(dist):
+def audit_assets(dist,base_path='/',site_origin=None):
     errors=[]
+    site_hosts=SITE_HOSTS | ({urlsplit(site_origin).netloc} if site_origin else set())
     def asset(url,file,allow_map=False):
         if not url or url.startswith(('data:','#')):return
         parsed=urlsplit(url)
         if allow_map and parsed.scheme=='https' and parsed.hostname in {'maps.google.com','www.google.com'} and parsed.path.startswith('/maps'):
             return  # Explicitly approved interactive Google Maps service.
-        if parsed.scheme not in {'','http','https'} or (parsed.netloc and parsed.netloc not in SITE_HOSTS):
+        if parsed.scheme not in {'','http','https'} or (parsed.netloc and parsed.netloc not in site_hosts):
             errors.append(f'{file.relative_to(dist)}: external asset: {url}')
             return
         path=unquote(parsed.path)
+        if path.startswith('/') and base_path!='/':
+            if not path.startswith(base_path):
+                errors.append(f'{file.relative_to(dist)}: asset outside deployment base: {url}')
+                return
+            path='/'+path[len(base_path):]
         target=dist/path.lstrip('/') if path.startswith('/') else file.parent/path
         if target.is_dir():target=target/'index.html'
         if not target.is_file():errors.append(f'{file.relative_to(dist)}: missing local asset: {url}')

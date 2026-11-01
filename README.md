@@ -51,4 +51,4 @@ Les images, vidéos, polices, fichiers et aperçus de partage sont hébergés lo
 
 Le site Wix et le DNS de production n’ont pas été modifiés.
 
-Le dépôt source privé est [9h41/psytours](https://github.com/9h41/psytours), avec `main` pour la version stable et `preview` pour le travail en cours. Les contrôles GitHub Actions ne déploient rien. L'hébergement Pages est actuellement bloqué par le forfait Free de l'organisation pour les dépôts privés ; voir [docs/hosting.md](docs/hosting.md).
+Le dépôt [9h41/psytours](https://github.com/9h41/psytours) est temporairement public pour tester Pages, avec `main` pour la version stable et `preview` pour le travail en cours. Le workflow de prévisualisation est configuré pour déployer `preview` sur `https://9h41.github.io/psytours/`, sans CNAME. Il vérifie le build puis prépare `.pages/` avec les chemins adaptés et l'indexation désactivée. Voir [docs/hosting.md](docs/hosting.md).
