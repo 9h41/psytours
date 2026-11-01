@@ -36,7 +36,7 @@ for file in pages:
     require(root.find(lambda n:n.tag=='link' and n.attrs.get('rel')=='canonical'), f'{rel}: no canonical')
     for node in root.walk():
         if node.tag=='script':
-            require(node.attrs.get('type')=='application/ld+json' or node.attrs.get('src')=='/assets/local-layout.js',f'{rel}: unexpected runtime script found')
+            require(node.attrs.get('type')=='application/ld+json' or node.attrs.get('src')=='/assets/local-layout.js' or (rel == 'index.html' and node.attrs.get('src')=='/assets/google-reviews.js'),f'{rel}: unexpected runtime script found')
             if node.attrs.get('type')=='application/ld+json':
                 try: json.loads(node.text())
                 except ValueError: errors.append(f'{rel}: invalid structured data')
@@ -120,5 +120,5 @@ if errors:
 total = sum(p.stat().st_size for p in DIST.rglob('*') if p.is_file())
 print(f'PASS: {len(pages)} HTML pages; all {len(original_routes)} original routes and sitemap entries; local links/assets; metadata; XML; no Wix runtime.')
 print(f'Captured main-page words preserved on {len(text_report)} routes; responsive images and CSS assets verified.')
-print(f'Asset audit: {audited_files} deployable text files; no Wix URLs or hotlinked assets. Direct Google Maps is the approved exception.')
+print(f'Asset audit: {audited_files} deployable text files; no Wix URLs or unapproved hotlinked assets. Google Maps and Places are approved exceptions.')
 print(f'Deployment size: {total / 1024 / 1024:.2f} MiB. Home HTML: {(DIST/"index.html").stat().st_size / 1024:.1f} KiB.')

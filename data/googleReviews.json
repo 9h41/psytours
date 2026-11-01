@@ -1,0 +1,41 @@
+{
+  "placeId": "ChIJPaeJ7gvV_EcRpreSL8KD9XA",
+  "browserApiKey": "",
+  "snapshot": {
+    "capturedAt": "2026-11-01",
+    "rating": "5.0",
+    "count": 5,
+    "reviews": [
+      {
+        "name": "Gourgas Marie",
+        "date": "2025-10-16",
+        "text": "Élisa est une praticienne profondément bienveillante, avec une présence authentique et une écoute d’une grande finesse. Elle sait créer un espace où l’on se sent en sécurité, libre d’exprimer ses émotions sans crainte ni jugement. Son accompagnement m’a permis d’avancer, de mieux me comprendre et de me reconnecter à moi-même. Chaque séance est un vrai moment de justesse et de douceur. Je la recommande chaleureusement.",
+        "initials": "GM"
+      },
+      {
+        "name": "Angélique RHAMATI",
+        "date": "2025-10-01",
+        "text": "Elisa a été d’une grande écoute, profondément humaine et respectueuse de mon rythme. Elle a su comprendre mes problématiques que j'ai pu exprimer librement et sans peur du jugement. Son accompagnement m’a permis de mieux me comprendre, de me reconnecter à moi-même et de découvrir des ressources intérieures insoupçonnées. Merci de me permettre à chaque séance de reprendre progressivement confiance en moi. Je recommande.",
+        "initials": "AR"
+      },
+      {
+        "name": "Marèva ALLEAUME",
+        "date": "2025-09-30",
+        "text": "Elisa allie professionnalisme et chaleur humaine. Sa posture juste et attentive crée un climat de confiance précieux.",
+        "initials": "MA"
+      },
+      {
+        "name": "Marie Coinet MegAgence",
+        "date": "2025-09-20",
+        "text": "Élisa est une praticienne à l’écoute, bienveillante et professionnelle. Son accompagnement en Gestalt est précieux et efficace.",
+        "initials": "MC"
+      },
+      {
+        "name": "Aude Alvino",
+        "date": "2025-09-19",
+        "text": "Elisa est douce et accueillante, grâce à son écoute attentive et à son accompagnement, j’ai pu prendre conscience de mes fonctionnements et avancer sur mon chemin personnel avec plus de clarté et de confiance. Je recommande vivement son accompagnement à toute personne souhaitant mieux se connaître et vivre plus en accord avec elle-même !",
+        "initials": "AA"
+      }
+    ]
+  }
+}

@@ -13,11 +13,13 @@ MEDIA_FIELDS={'image','logo','thumbnailUrl','contentUrl','embedUrl'}
 def audit_assets(dist,base_path='/',site_origin=None):
     errors=[]
     site_hosts=SITE_HOSTS | ({urlsplit(site_origin).netloc} if site_origin else set())
-    def asset(url,file,allow_map=False):
+    def asset(url,file,allow_map=False,allow_review_script=False):
         if not url or url.startswith(('data:','#')):return
         parsed=urlsplit(url)
         if allow_map and parsed.scheme=='https' and parsed.hostname in {'maps.google.com','www.google.com'} and parsed.path.startswith('/maps'):
             return  # Explicitly approved interactive Google Maps service.
+        if allow_review_script and parsed.scheme=='https' and parsed.hostname=='maps.googleapis.com' and parsed.path=='/maps/api/js':
+            return  # Explicitly approved Google Maps JavaScript API for homepage reviews.
         if parsed.scheme not in {'','http','https'} or (parsed.netloc and parsed.netloc not in site_hosts):
             errors.append(f'{file.relative_to(dist)}: external asset: {url}')
             return
@@ -54,6 +56,8 @@ def audit_assets(dist,base_path='/',site_origin=None):
         if file.suffix=='.css':css(text,file)
         if file.suffix=='.js':
             for url in re.findall(r'(?:fetch|import|importScripts|Worker)\(\s*[\'"]([^\'"]+)',text):asset(url,file)
+            for url in re.findall(r'new URL\(\s*[\'"](https?://[^\'"]+)',text):
+                asset(url,file,allow_review_script=file.relative_to(dist).as_posix()=='assets/google-reviews.js')
         if file.suffix not in {'.html','.svg'}:continue
         root=Tree(text).root
         for node in root.walk():
@@ -77,5 +81,5 @@ def audit_assets(dist,base_path='/',site_origin=None):
 if __name__=='__main__':
     dist=Path(__file__).resolve().parents[1]/'dist'
     errors,count=audit_assets(dist)
-    print('\n'.join(errors) if errors else f'PASS: {count} deployable text files audited; assets are local; direct Google Maps iframes are the sole external asset service.')
+    print('\n'.join(errors) if errors else f'PASS: {count} deployable text files audited; Google Maps and Places are approved external services.')
     raise SystemExit(bool(errors))
