@@ -7,6 +7,16 @@ from prepare_pages import prepare, rewrite_urls
 from check_assets import audit_assets
 
 class PagesTests(unittest.TestCase):
+    def test_svg_masks_and_self_closing_elements_stay_intact(self):
+        mask="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h10v10z'/%3E%3C/svg%3E"
+        svg='<svg xmlns="http://www.w3.org/2000/svg"><path d="M0 0h10v10z"/></svg>'
+        source=f'.image{{mask-image:url("{mask}")}}\n{svg}\n<img src="/assets/photo.jpg"/>'
+        result=rewrite_urls(source,'/psytours/','https://9h41.github.io')
+        self.assertIn(mask,result)
+        self.assertIn(svg,result)
+        self.assertIn('<img src="/psytours/assets/photo.jpg"/>',result)
+        self.assertNotIn("'/psytours/%3E",result)
+
     def test_all_url_contexts_and_unrelated_content(self):
         source='''<a href="/">Accueil</a><a href="/blog/">Blog</a>
 <template><img src="/assets/a.jpg" srcset="/assets/a.jpg 1x, /assets/b.jpg 2x"></template>

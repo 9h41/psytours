@@ -13,8 +13,10 @@ TEXT_EXTENSIONS={'.html','.css','.js','.json','.xml','.svg'}
 
 def rewrite_urls(text,base_path,origin):
     # Quoted HTML/JSON/JS URLs, including URLs in the mobile template.
-    text=re.sub(r'''(["'])/(?!/)([^\s"'<>]*)''',
-                lambda m:m[1]+base_path+m[2],text)
+    # Match the whole quoted URL. A quote followed by '/' can also be the
+    # end of an SVG attribute before '/>', including inside data-URL masks.
+    text=re.sub(r'''(["'])(/(?!/)[^\s"'<>]*)\1''',
+                lambda m:m[1]+base_path+m[2][1:]+m[1],text)
     # Unquoted CSS url() and subsequent responsive-image candidates.
     text=re.sub(r'(?<![\w/.:])/assets/',base_path+'assets/',text)
     # Social/structured-data media must use this deployment, not production.
