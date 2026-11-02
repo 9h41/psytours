@@ -35,3 +35,39 @@ body.menu-open #MENU_AS_CONTAINER_TOGGLE{z-index:100000!important}body.menu-open
 /* Wix adds this collapsible-text marker after startup. */
 #comp-mvy6obgc .wZznb7{text-align:end;height:29px}
 #comp-mvy6obgc .voyage-faq-plus{display:inline-block;margin-top:5px;font:16px/24px Arial,sans-serif;text-decoration:underline;color:#000;cursor:pointer}
+/* Editable HTML counterpart of the Voyage intérieur three-step illustration. */
+.voyage-steps { container-type: inline-size; background: #faf2ef; }
+.voyage-steps__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 5.12cqw 2.9cqw 0;
+  list-style: none;
+  text-align: center;
+}
+.voyage-steps__list li { min-width: 0; }
+.voyage-steps__list li + li { border-left: 1px solid #e3aaa1; }
+.voyage-steps__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.6cqw;
+  height: 7.6cqw;
+  margin: 0 auto 1.2cqw;
+  border: 1px solid #aa4c3e;
+  border-radius: 50%;
+  background: #c66658;
+  color: white;
+  font: 4.4cqw/1 Georgia, serif;
+}
+.voyage-steps__list h3 {
+  margin: 0 0 1.1cqw;
+  color: #760720;
+  font: 3.2cqw/1.15 Georgia, serif;
+  white-space: nowrap;
+}
+.voyage-steps__list p {
+  margin: 0;
+  color: #111;
+  font: 2.05cqw/1.3 montserrat, sans-serif;
+}
