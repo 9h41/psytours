@@ -13,7 +13,7 @@
 {% for stylesheet in originalMobileStyles or presentation.mobileStyles %}<link rel="stylesheet" href="{{ stylesheet }}" media="(max-width: 767px)" data-mobile-style>{% endfor %}
 <link rel="stylesheet" href="/assets/fidelity.css">
 <link rel="stylesheet" href="/assets/original/repeater-spacing.css">
-{% if page.url == '/' %}<link rel="stylesheet" href="/assets/google-reviews.css"><script src="/assets/google-reviews.js" defer></script>{% endif %}
+{% if page.url == '/' %}<link rel="stylesheet" href="/assets/google-reviews.css"><link rel="stylesheet" href="/assets/home-faq.css"><script src="/assets/google-reviews.js" defer></script><script src="/assets/home-faq.js" defer></script>{% endif %}
 <script src="/assets/local-layout.js" defer></script>
 </head>
 <body>

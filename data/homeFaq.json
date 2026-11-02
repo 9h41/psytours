@@ -1,0 +1,17 @@
+[
+  {"category":"Consultation en visio","questions":[
+    {"question":"Comment se déroule une consultation en visio ?","answer":"La consultation en visio se déroule dans un cadre simple, confidentiel et adapté à la Gestalt-thérapie. Elle dure 45 minutes et permet de consulter facilement, où que vous soyez."},
+    {"question":"Comment prendre rendez-vous pour une séance en visio ?","answer":"Vous pouvez prendre rendez-vous facilement par téléphone ou par email. Le contact est prévu pour vous permettre d’organiser votre première séance simplement."},
+    {"question":"La visio est-elle adaptée si je ne peux pas me déplacer ?","answer":"Oui, les séances en visio permettent de bénéficier d’un accompagnement à distance, tout en gardant un cadre thérapeutique structuré. C’est une solution pratique si vous êtes loin ou si vos contraintes rendent le déplacement difficile."}
+  ]},
+  {"category":"Gestalt-thérapie à Tours","questions":[
+    {"question":"Proposez-vous des séances en cabinet à Tours ?","answer":"Oui, je propose des séances de Gestalt-thérapie en cabinet à Tours, ainsi qu’en visio. Vous pouvez choisir le format le plus adapté à votre situation et à votre confort."},
+    {"question":"Quels types de difficultés peuvent être travaillés en Gestalt-thérapie ?","answer":"La Gestalt-thérapie peut accompagner des problématiques comme le stress, l’anxiété, les transitions de vie, les relations, le deuil ou les difficultés d’affirmation de soi. Elle s’adresse aussi aux personnes qui souhaitent mieux se comprendre et avancer de façon plus concrète."},
+    {"question":"Quel est le cadre de la consultation ?","answer":"Les séances se déroulent dans un cadre confidentiel, avec une approche centrée sur la transformation concrète et l’accompagnement personnalisé. L’objectif est de vous offrir un espace de parole clair et sécurisant."}
+  ]},
+  {"category":"Conseils psy et accompagnement","questions":[
+    {"question":"Que trouve-t-on dans la rubrique Conseils Psy ?","answer":"La rubrique Conseils Psy propose des contenus pour approfondir vos connaissances en psychologie et en bien-être. Vous y trouverez des outils et des exercices concrets pour mieux comprendre certaines difficultés du quotidien."},
+    {"question":"Sur quels thèmes portent vos contenus de conseil ?","answer":"Les sujets abordés incluent notamment la gestion du stress, l’anxiété, le sommeil, le burn-out, le deuil, la séparation, le bonheur, les relations et l’amour. Les contenus visent aussi à aider à surmonter certaines difficultés et à retrouver plus de stabilité."},
+    {"question":"Peut-on s’appuyer sur ces conseils pour choisir un professionnel ?","answer":"Oui, certains contenus abordent aussi les repères utiles pour trouver un professionnel, comprendre la pratique encadrée, les règles et devoirs, ainsi que l’importance de la formation, du diplôme et des valeurs. Cela peut vous aider à mieux orienter votre démarche."}
+  ]}
+]

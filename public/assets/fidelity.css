@@ -32,3 +32,6 @@ body.menu-open #MENU_AS_CONTAINER_TOGGLE{z-index:100000!important}body.menu-open
 /* Wix changes the homepage gallery's column count as its available width grows. */
 @media(min-width:1034px){#comp-m4sgx9rv .pro-gallery-margin-container{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:1713px){#comp-m4sgx9rv .pro-gallery-margin-container{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* Wix adds this collapsible-text marker after startup. */
+#comp-mvy6obgc .wZznb7{text-align:end;height:29px}
+#comp-mvy6obgc .voyage-faq-plus{display:inline-block;margin-top:5px;font:16px/24px Arial,sans-serif;text-decoration:underline;color:#000;cursor:pointer}
