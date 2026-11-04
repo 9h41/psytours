@@ -71,3 +71,10 @@ body.menu-open #MENU_AS_CONTAINER_TOGGLE{z-index:100000!important}body.menu-open
   color: #111;
   font: 2.05cqw/1.3 montserrat, sans-serif;
 }
+
+/* The live site expands this copy with Wix's runtime; show it in full locally. */
+#comp-mvyzq295 .wixui-collapsible-text__text {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
