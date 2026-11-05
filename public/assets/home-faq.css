@@ -1,13 +1,11 @@
 [data-mesh-id="Containeruo1gsinlineContent-gridContainer"]:has(> .home-faq){grid-template-rows:repeat(9,min-content) 1fr}
 [data-mesh-id="Containeruo1gsinlineContent-gridContainer"] > .home-faq{grid-area:6 / 1 / 7 / 2}
 @media (min-width:768px){
-  [data-mesh-id="comp-mluynvhdinlineContent-gridContainer"]{min-height:700px}
   [data-mesh-id="comp-mmaoatu8inlineContent-gridContainer"] > #comp-mmaoatv3{margin:3px 0 0;grid-area:1 / 1 / 2 / 2}
   [data-mesh-id="Containeruo1gsinlineContent-gridContainer"] > #comp-mmaoatu8{grid-area:7 / 1 / 8 / 2}
   [data-mesh-id="Containeruo1gsinlineContent-gridContainer"] > #comp-mi8lkk75{grid-area:8 / 1 / 9 / 2}
 }
 @media (max-width:767px){
-  [data-mesh-id="comp-mluynvhdinlineContent-gridContainer"]{min-height:670px}
   [data-mesh-id="comp-mmaoatu8inlineContent-gridContainer"] > #comp-mmaoatv3{margin:0 0 37px calc((100% - 320px) * .5);grid-area:1 / 1 / 2 / 2}
   [data-mesh-id="Containeruo1gsinlineContent-gridContainer"] > #comp-mi8lkk75{grid-area:7 / 1 / 8 / 2}
   [data-mesh-id="Containeruo1gsinlineContent-gridContainer"] > #comp-mmaoatu8{grid-area:8 / 1 / 9 / 2}
