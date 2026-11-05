@@ -36,7 +36,7 @@ for file in pages:
     require(root.find(lambda n:n.tag=='link' and n.attrs.get('rel')=='canonical'), f'{rel}: no canonical')
     for node in root.walk():
         if node.tag=='script':
-            require(node.attrs.get('type')=='application/ld+json' or node.attrs.get('src')=='/assets/local-layout.js' or (rel == 'index.html' and node.attrs.get('src') in {'/assets/google-reviews.js','/assets/home-faq.js'}),f'{rel}: unexpected runtime script found')
+            require(node.attrs.get('type')=='application/ld+json' or node.attrs.get('src') in {'/assets/local-layout.js','/assets/site-motion.js'} or (rel == 'index.html' and node.attrs.get('src') in {'/assets/google-reviews.js','/assets/home-faq.js'}),f'{rel}: unexpected runtime script found')
             if node.attrs.get('type')=='application/ld+json':
                 try: json.loads(node.text())
                 except ValueError: errors.append(f'{rel}: invalid structured data')

@@ -1,4 +1,4 @@
-// A small adapter for the two original layouts; no Wix runtime or animations.
+// A small adapter for the two original layouts; no Wix runtime.
 const desktop = document.getElementById('desktop-layout');
 const mobile = document.getElementById('mobile-layout');
 const desktopMarkup = desktop.innerHTML;
@@ -20,6 +20,7 @@ function applyLayout() {
     action.setAttribute('role', 'link');
     action.tabIndex = 0;
   }
+  document.dispatchEvent(new Event('site-layout-changed'));
 }
 applyLayout();
 narrow.addEventListener('change', applyLayout);

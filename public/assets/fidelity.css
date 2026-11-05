@@ -1,5 +1,27 @@
 /* All other presentation comes from the original site's captured styles. */
-*,*::before,*::after{animation:none!important;transition:none!important}
+/* Wix's captured entrance animations are paused until the local controller starts them. */
+*,*::before,*::after{animation:none!important}
+.site-motion-pending{visibility:hidden!important}
+@media print{.site-motion-pending{visibility:visible!important}}
+/* Wix lifts the consultation card and its text independently on hover. */
+@media (min-width:768px) and (hover:hover) and (prefers-reduced-motion:no-preference){
+  #comp-mkdo8fan .comp-mkdo8fav,
+  #comp-mkdo8fan .comp-mkdo8fb5{transition:transform .2s ease-in-out!important}
+  #comp-mkdo8fan .comp-mkdo8fav:hover{z-index:1;transform:translateY(-10px)}
+  #comp-mkdo8fan .comp-mkdo8fav:hover .comp-mkdo8fb5{transform:translateY(-19px)}
+}
+@media (hover:none), (prefers-reduced-motion:reduce){
+  #comp-mkdo8fan .comp-mkdo8fav:hover,
+  #comp-mkdo8fan .comp-mkdo8fav:hover .comp-mkdo8fb5,
+  .comp-mkdomoii:hover .comp-mkdomoil3,
+  .comp-m5satgap:hover,
+  .comp-m5satgap:hover .comp-m5satgar5,
+  .comp-m5satgap:hover .comp-m5satgat{transform:none!important}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .site-motion-pending{visibility:visible!important}
+}
 #comp-ms4mtsxq,#comp-ms4mtsxq>div,#comp-ms4mtsxq img{border-radius:200px 200px 0 0!important;overflow:hidden}
 .static-skip{position:absolute;left:-10000px}.static-skip:focus{left:15px;top:15px;z-index:100000;background:#fff;padding:12px}
 /* Runtime-free menu: preserve the original appearance, reveal its existing links. */
