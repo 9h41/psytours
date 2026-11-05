@@ -72,9 +72,84 @@ body.menu-open #MENU_AS_CONTAINER_TOGGLE{z-index:100000!important}body.menu-open
   font: 2.05cqw/1.3 montserrat, sans-serif;
 }
 
-/* The live site expands this copy with Wix's runtime; show it in full locally. */
-#comp-mvyzq295 .wixui-collapsible-text__text {
-  display: block;
-  -webkit-line-clamp: unset;
-  overflow: visible;
+/* Editable counterpart of the Voyage intérieur benefits graphic. */
+.voyage-benefits {
+  box-sizing: border-box;
+  container-type: inline-size;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  color: #001138;
+  background:
+    radial-gradient(ellipse at 0 0, #e9c4c6 0, #f3dedd 10%, transparent 25%),
+    radial-gradient(ellipse at 100% 0, #efddc4 0, transparent 21%),
+    radial-gradient(ellipse at 0 100%, #ebd6bc 0, transparent 21%),
+    radial-gradient(ellipse at 100% 100%, #ebcacc 0, transparent 24%),
+    #faf4ef;
 }
+.voyage-benefits h2 {
+  margin: 1.7cqw 0 0;
+  color: #680018;
+  font: 7.1cqw/.93 Georgia, serif;
+}
+.voyage-benefits h2 em {
+  display: block;
+  color: #001138;
+  font-size: .73em;
+  font-weight: normal;
+}
+.voyage-benefits__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8cqw;
+  margin: 1.9cqw auto 1.4cqw;
+  color: #800027;
+  font-size: 1.1cqw;
+  background: linear-gradient(45deg, transparent 45%, #800027 46% 54%, transparent 55%) center / .9cqw .9cqw no-repeat;
+}
+.voyage-benefits__divider::before,
+.voyage-benefits__divider::after { content: ''; width: 7cqw; height: 1px; background: currentColor; opacity: .55; }
+.voyage-benefits__divider::after { order: 2; }
+.voyage-benefits__list { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; padding: 0 5.4cqw; list-style: none; }
+.voyage-benefits__list li { display: flex; flex-direction: column; align-items: center; }
+.voyage-benefits__list h3 { margin: .6cqw 0 .5cqw; color: #70001c; font: bold 3cqw/1.1 Georgia, serif; }
+.voyage-benefits__list p { margin: 0; font: 1.95cqw/1.22 montserrat, sans-serif; }
+.voyage-benefits__icon {
+  position: relative;
+  display: block;
+  flex: none;
+  width: 12.8cqw;
+  height: 12.8cqw;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 35% 25%, #f1d5d1, #f9ede8 52%, #f2d9d3);
+}
+.voyage-benefits__icon--chat { background: radial-gradient(ellipse at 35% 25%, #f4e0c7, #fbf1e5 58%, #f1dbc5); }
+.voyage-benefits__icon--path::before,
+.voyage-benefits__icon--path::after { content: ''; position: absolute; left: 20%; width: 60%; height: 24%; border: 1px solid #001138; border-color: #001138 transparent transparent transparent; border-radius: 50%; transform: rotate(-14deg); }
+.voyage-benefits__icon--path::before { top: 35%; }
+.voyage-benefits__icon--path::after { top: 54%; transform: rotate(15deg); }
+.voyage-benefits__icon--chat::before,
+.voyage-benefits__icon--chat::after { content: ''; position: absolute; border: 1px solid #001138; border-radius: 50%; background: #f9ede4; }
+.voyage-benefits__icon--chat::before { width: 52%; height: 40%; top: 20%; left: 16%; }
+.voyage-benefits__icon--chat::after { width: 38%; height: 31%; top: 47%; left: 48%; }
+.voyage-benefits__icon--computer::before { content: ''; position: absolute; left: 20%; top: 25%; width: 60%; height: 40%; border: 1px solid #001138; border-radius: 4px 4px 0 0; }
+.voyage-benefits__icon--computer::after { content: ''; position: absolute; left: 14%; top: 67%; width: 72%; height: 4%; border: 1px solid #001138; border-radius: 0 0 5px 5px; }
+.voyage-benefits__divider--bottom { margin: 2.1cqw auto 2.2cqw; }
+.voyage-benefits__closing { margin: 0; font: 1.38cqw/1.2 montserrat, sans-serif; letter-spacing: .3em; text-transform: uppercase; }
+@media (max-width: 767px) {
+  .voyage-benefits h2 { margin-top: 6.5cqw; font-size: 12.1cqw; }
+  .voyage-benefits h2 em { color: #680018; font-size: .69em; font-style: normal; }
+  .voyage-benefits__divider { margin: 4.5cqw auto; font-size: 2cqw; gap: 1.5cqw; background-size: 1.5cqw 1.5cqw; }
+  .voyage-benefits__divider::before, .voyage-benefits__divider::after { width: 12cqw; }
+  .voyage-benefits__list { display: block; padding: 0 12cqw; text-align: left; }
+  .voyage-benefits__list li { display: flex; flex-direction: row; gap: 4cqw; min-height: 25cqw; position: relative; }
+  .voyage-benefits__list li + li::before { content: '◆'; position: absolute; top: -1.6cqw; left: 33%; width: 44%; color: #800027; font-size: 2cqw; text-align: center; background: linear-gradient(#c99a98, #c99a98) center / 100% 1px no-repeat; }
+  .voyage-benefits__icon { width: 21cqw; height: 21cqw; }
+  .voyage-benefits__list h3 { margin: 0 0 1cqw; color: #001138; font: bold 4.6cqw/1.1 montserrat, sans-serif; white-space: nowrap; }
+  .voyage-benefits__list p { font-size: 3.6cqw; line-height: 1.2; }
+  .voyage-benefits__divider--bottom { display: none; }
+  .voyage-benefits__closing { margin-top: 3cqw; color: #70001c; font: italic 4cqw/1.2 Georgia, serif; letter-spacing: 0; text-transform: none; }
+}
+
